@@ -1,0 +1,1096 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >smtp-server (v3.0.1)</a>
+</h1>
+<h4>Create custom SMTP servers on the fly</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.smtp-server">module smtp-server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.SMTPServer">
+            function <span class="apidocSignatureSpan">smtp-server.</span>SMTPServer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">smtp-server.</span>sasl</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">smtp-server.</span>smtp_connection</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">smtp-server.</span>smtp_stream</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.smtp-server.sasl">module smtp-server.sasl</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.CRAM-MD5_token">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>CRAM-MD5_token
+            <span class="apidocSignatureSpan">(canAbort, challenge, token, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.LOGIN_password">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>LOGIN_password
+            <span class="apidocSignatureSpan">(username, password, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.LOGIN_username">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>LOGIN_username
+            <span class="apidocSignatureSpan">(canAbort, username, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.PLAIN_token">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>PLAIN_token
+            <span class="apidocSignatureSpan">(canAbort, token, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.SASL_CRAM-MD5">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_CRAM-MD5
+            <span class="apidocSignatureSpan">(args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.SASL_LOGIN">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_LOGIN
+            <span class="apidocSignatureSpan">(args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.SASL_PLAIN">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_PLAIN
+            <span class="apidocSignatureSpan">(args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.SASL_XOAUTH2">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_XOAUTH2
+            <span class="apidocSignatureSpan">(args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.XOAUTH2_error">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>XOAUTH2_error
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.sasl.XOAUTH2_token">
+            function <span class="apidocSignatureSpan">smtp-server.sasl.</span>XOAUTH2_token
+            <span class="apidocSignatureSpan">(canAbort, token, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.smtp-server.smtp_connection">module smtp-server.smtp_connection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.smtp_connection.SMTPConnection">
+            function <span class="apidocSignatureSpan">smtp-server.smtp_connection.</span>SMTPConnection
+            <span class="apidocSignatureSpan">(server, socket)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.smtp-server.smtp_stream">module smtp-server.smtp_stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.smtp-server.smtp_stream.SMTPStream">
+            function <span class="apidocSignatureSpan">smtp-server.smtp_stream.</span>SMTPStream
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.smtp-server" id="apidoc.module.smtp-server">module smtp-server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.SMTPServer" id="apidoc.element.smtp-server.SMTPServer">
+        function <span class="apidocSignatureSpan">smtp-server.</span>SMTPServer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class SMTPServer extends EventEmitter {
+    constructor(options) {
+        super();
+
+        this.options = options || {};
+
+        this.secureContext = new Map();
+        this.secureContext.set(&#x27;default&#x27;, tls.createSecureContext(tlsOptions(this.options)));
+
+        let ctxMap = this.options.sniOptions || {};
+        if (typeof ctxMap.get === &#x27;function&#x27;) {
+            ctxMap.forEach((ctx, servername) =&#x3e; {
+                this.secureContext.set(servername.toLowerCase().trim(), tls.createSecureContext(tlsOptions(ctx)));
+            });
+        } else {
+            Object.keys(ctxMap).forEach(servername =&#x3e; {
+                this.secureContext.set(servername.toLowerCase().trim(), tls.createSecureContext(tlsOptions(ctxMap[servername])));
+            });
+        }
+
+        // apply TLS defaults if needed, only if there is not SNICallback.
+        if (this.options.secure &#x26;&#x26; typeof this.options.SNICallback !== &#x27;function&#x27;) {
+            this.options = tlsOptions(this.options);
+            this.options.SNICallback = (servername, cb) =&#x3e; {
+                cb(null, this.secureContext.get(servername.toLowerCase().trim()) || this.secureContext.get(&#x27;default&#x27;));
+            };
+        }
+
+        // setup disabled commands list
+        this.options.disabledCommands = [].concat(this.options.disabledCommands || [])
+            .map(command =&#x3e; (command || &#x27;&#x27;).toString().toUpperCase().trim());
+
+        // setup allowed auth methods
+        this.options.authMethods = [].concat(this.options.authMethods || [])
+            .map(method =&#x3e; (method || &#x27;&#x27;).toString().toUpperCase().trim());
+
+        if (!this.options.authMethods.length) {
+            this.options.authMethods = [&#x27;LOGIN&#x27;, &#x27;PLAIN&#x27;];
+        }
+
+        this.logger = shared.getLogger(this.options, {
+            component: this.options.component || &#x27;smtp-server&#x27;
+        });
+
+        // apply shorthand handlers
+        [&#x27;onConnect&#x27;, &#x27;onAuth&#x27;, &#x27;onMailFrom&#x27;, &#x27;onRcptTo&#x27;, &#x27;onData&#x27;, &#x27;onClose&#x27;].forEach(handler =&#x3e; {
+            if (typeof this.options[handler] === &#x27;function&#x27;) {
+                this[handler] = this.options[handler];
+            }
+        });
+
+<span class="apidocCodeCommentSpan">        /**
+         * Timeout after close has been called until pending connections are forcibly closed
+         */
+</span>        this._closeTimeout = false;
+
+        /**
+         * A set of all currently open connections
+         */
+        this.connections = new Set();
+
+        // setup server listener and connection handler
+        this.server = (this.options.secure ? tls : net)
+            .createServer(this.options, socket =&#x3e; this.connect(socket));
+
+        // ensure _sharedCreds, fixes an issue in node v4+ where STARTTLS fails because _sharedCreds does not exist
+        this.server._sharedCreds = this.server._sharedCreds || this.secureContext.get(&#x27;default&#x27;);
+
+        this._setListeners();
+    }
+
+    connect(socket) {
+        let connection = new SMTPConnection(this, socket);
+        this.connections.add(connection);
+        connection.on(&#x27;error&#x27;, err =&#x3e; this._onError(err));
+        connection.on(&#x27;connect&#x27;, data =&#x3e; this._onClientConnect(data));
+        connection.init();
+    }
+
+    /**
+     * Start listening on selected port and interface
+     */
+    listen(...args) {
+        this.server.listen(...args);
+    }
+
+    /**
+     * Closes the server
+     *
+     * @param {Function} callback Callback to run once the server is fully closed
+     */
+    close(callback) {
+        let connections = this.connections.size;
+        let timeout = this.options.closeTimeout || CLOSE_TIMEOUT;
+
+        // stop accepting new connections
+        this.server.close(() =&#x3e; {
+            clearTimeout(this._closeTimeout);
+            if (typeof callback === &#x27;function&#x27;) {
+                return callback();
+            }
+        });
+
+        // close active connections
+        if (connections) {
+            this.logger.info({
+                tnx: &#x27;close&#x27;
+            }, &#x27;Server closing with %s pending connection%s, waiting %s seconds before terminating&#x27;, connections, connections !==
+1 ? &#x27;s&#x27; : &#x27;&#x27;, timeout / 1000);
+        }
+
+        this._closeTimeout = setTimeout(() =&#x3e; { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.smtp-server.sasl" id="apidoc.module.smtp-server.sasl">module smtp-server.sasl</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.CRAM-MD5_token" id="apidoc.element.smtp-server.sasl.CRAM-MD5_token">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>CRAM-MD5_token
+        <span class="apidocSignatureSpan">(canAbort, challenge, token, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">CRAM-MD5_token(canAbort, challenge, token, callback) {
+    token = (token || &#x27;&#x27;).toString().trim();
+
+    if (canAbort &#x26;&#x26; token === &#x27;*&#x27;) {
+        this.send(501, &#x27;Authentication aborted&#x27;);
+        return callback();
+    }
+
+    let tokenParts = new Buffer(token, &#x27;base64&#x27;).toString().split(&#x27; &#x27;);
+    let username = tokenParts.shift();
+    let challengeResponse = (tokenParts.shift() || &#x27;&#x27;).toLowerCase();
+
+    this._server.onAuth({
+        method: &#x27;CRAM-MD5&#x27;,
+        username,
+        validatePassword(password) {
+            let hmac = crypto.createHmac(&#x27;md5&#x27;, password);
+            return hmac.update(challenge).digest(&#x27;hex&#x27;).toLowerCase() === challengeResponse;
+        }
+    }, this.session, (err, response) =&#x3e; {
+
+        if (err) {
+            this._server.logger.info({
+                err,
+                tnx: &#x27;autherror&#x27;,
+                cid: this._id,
+                method: &#x27;CRAM-MD5&#x27;,
+                user: username
+            }, &#x27;Authentication error for %s using %s. %s&#x27;, username, &#x27;CRAM-MD5&#x27;, err.message);
+            this.send(err.responseCode || 535, err.message);
+            return callback();
+        }
+
+        if (!response.user) {
+            this._server.logger.info({
+                tnx: &#x27;authfail&#x27;,
+                cid: this._id,
+                method: &#x27;CRAM-MD5&#x27;,
+                user: username
+            }, &#x27;Authentication failed for %s using %s&#x27;, username, &#x27;CRAM-MD5&#x27;);
+            this.send(response.responseCode || 535, response.message || &#x27;Error: Authentication credentials invalid&#x27;);
+            return callback();
+        }
+
+        this._server.logger.info({
+            tnx: &#x27;auth&#x27;,
+            cid: this._id,
+            method: &#x27;CRAM-MD5&#x27;,
+            user: username
+        }, &#x27;%s authenticated using %s&#x27;, username, &#x27;CRAM-MD5&#x27;);
+        this.session.user = response.user;
+        this.session.transmissionType = this._transmissionType();
+
+        this.send(235, &#x27;Authentication successful&#x27;);
+        callback();
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.LOGIN_password" id="apidoc.element.smtp-server.sasl.LOGIN_password">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>LOGIN_password
+        <span class="apidocSignatureSpan">(username, password, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LOGIN_password(username, password, callback) {
+    password = (password || &#x27;&#x27;).toString().trim();
+
+    if (password === &#x27;*&#x27;) {
+        this.send(501, &#x27;Authentication aborted&#x27;);
+        return callback();
+    }
+
+    password = new Buffer(password, &#x27;base64&#x27;).toString();
+
+    this._server.onAuth({
+        method: &#x27;LOGIN&#x27;,
+        username,
+        password
+    }, this.session, (err, response) =&#x3e; {
+
+        if (err) {
+            this._server.logger.info({
+                err,
+                tnx: &#x27;autherror&#x27;,
+                cid: this._id,
+                method: &#x27;LOGIN&#x27;,
+                user: username
+            }, &#x27;Authentication error for %s using %s. %s&#x27;, username, &#x27;LOGIN&#x27;, err.message);
+            this.send(err.responseCode || 535, err.message);
+            return callback();
+        }
+
+        if (!response.user) {
+            this._server.logger.info({
+                tnx: &#x27;authfail&#x27;,
+                cid: this._id,
+                method: &#x27;LOGIN&#x27;,
+                user: username
+            }, &#x27;Authentication failed for %s using %s&#x27;, username, &#x27;LOGIN&#x27;);
+            this.send(response.responseCode || 535, response.message || &#x27;Error: Authentication credentials invalid&#x27;);
+            return callback();
+        }
+
+        this._server.logger.info({
+            tnx: &#x27;auth&#x27;,
+            cid: this._id,
+            method: &#x27;PLAIN&#x27;,
+            user: username
+        }, &#x27;%s authenticated using %s&#x27;, username, &#x27;LOGIN&#x27;);
+        this.session.user = response.user;
+        this.session.transmissionType = this._transmissionType();
+
+        this.send(235, &#x27;Authentication successful&#x27;);
+        callback();
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.LOGIN_username" id="apidoc.element.smtp-server.sasl.LOGIN_username">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>LOGIN_username
+        <span class="apidocSignatureSpan">(canAbort, username, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LOGIN_username(canAbort, username, callback) {
+    username = (username || &#x27;&#x27;).toString().trim();
+
+    if (canAbort &#x26;&#x26; username === &#x27;*&#x27;) {
+        this.send(501, &#x27;Authentication aborted&#x27;);
+        return callback();
+    }
+
+    username = new Buffer(username, &#x27;base64&#x27;).toString();
+
+    if (!username) {
+        this.send(500, &#x27;Error: missing username&#x27;);
+        return callback();
+    }
+
+    this._nextHandler = SASL.LOGIN_password.bind(this, username);
+    this.send(334, &#x27;UGFzc3dvcmQ6&#x27;);
+    return callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.PLAIN_token" id="apidoc.element.smtp-server.sasl.PLAIN_token">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>PLAIN_token
+        <span class="apidocSignatureSpan">(canAbort, token, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">PLAIN_token(canAbort, token, callback) {
+    token = (token || &#x27;&#x27;).toString().trim();
+
+    if (canAbort &#x26;&#x26; token === &#x27;*&#x27;) {
+        this.send(501, &#x27;Authentication aborted&#x27;);
+        return callback();
+    }
+
+    let data = new Buffer(token, &#x27;base64&#x27;).toString().split(&#x27;\x00&#x27;);
+
+    if (data.length !== 3) {
+        this.send(500, &#x27;Error: invalid userdata&#x27;);
+        return callback();
+    }
+
+    let username = data[1] || data[0] || &#x27;&#x27;;
+    let password = data[2] || &#x27;&#x27;;
+
+    this._server.onAuth({
+        method: &#x27;PLAIN&#x27;,
+        username,
+        password
+    }, this.session, (err, response) =&#x3e; {
+
+        if (err) {
+            this._server.logger.info({
+                err,
+                tnx: &#x27;autherror&#x27;,
+                cid: this._id,
+                method: &#x27;PLAIN&#x27;,
+                user: username
+            }, &#x27;Authentication error for %s using %s. %s&#x27;, username, &#x27;PLAIN&#x27;, err.message);
+            this.send(err.responseCode || 535, err.message);
+            return callback();
+        }
+
+        if (!response.user) {
+            this._server.logger.info({
+                tnx: &#x27;authfail&#x27;,
+                cid: this._id,
+                method: &#x27;PLAIN&#x27;,
+                user: username
+            }, &#x27;Authentication failed for %s using %s&#x27;, username, &#x27;PLAIN&#x27;);
+            this.send(response.responseCode || 535, response.message || &#x27;Error: Authentication credentials invalid&#x27;);
+            return callback();
+        }
+
+        this._server.logger.info({
+            tnx: &#x27;auth&#x27;,
+            cid: this._id,
+            method: &#x27;PLAIN&#x27;,
+            user: username
+        }, &#x27;%s authenticated using %s&#x27;, username, &#x27;PLAIN&#x27;);
+        this.session.user = response.user;
+        this.session.transmissionType = this._transmissionType();
+
+        this.send(235, &#x27;Authentication successful&#x27;);
+        callback();
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.SASL_CRAM-MD5" id="apidoc.element.smtp-server.sasl.SASL_CRAM-MD5">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_CRAM-MD5
+        <span class="apidocSignatureSpan">(args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SASL_CRAM-MD5(args, callback) {
+    if (args.length) {
+        this.send(501, &#x27;Error: syntax: AUTH CRAM-MD5&#x27;);
+        return callback();
+    }
+
+    let challenge = util.format(&#x27;&#x3c;%s%s@%s&#x3e;&#x27;,
+        String(Math.random()).replace(/^[0\.]+/, &#x27;&#x27;).substr(0, 8), // random numbers
+        Math.floor(Date.now() / 1000), // timestamp
+        this.name // hostname
+    );
+
+    this._nextHandler = SASL[&#x27;CRAM-MD5_token&#x27;].bind(this, true, challenge);
+    this.send(334, new Buffer(challenge).toString(&#x27;base64&#x27;));
+    return callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.SASL_LOGIN" id="apidoc.element.smtp-server.sasl.SASL_LOGIN">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_LOGIN
+        <span class="apidocSignatureSpan">(args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SASL_LOGIN(args, callback) {
+    if (args.length &#x3e; 1) {
+        this.send(501, &#x27;Error: syntax: AUTH LOGIN&#x27;);
+        return callback();
+    }
+
+    if (!args.length) {
+        this._nextHandler = SASL.LOGIN_username.bind(this, true);
+        this.send(334, &#x27;VXNlcm5hbWU6&#x27;);
+        return callback();
+    }
+
+    SASL.LOGIN_username.call(this, false, args[0], callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.SASL_PLAIN" id="apidoc.element.smtp-server.sasl.SASL_PLAIN">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_PLAIN
+        <span class="apidocSignatureSpan">(args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SASL_PLAIN(args, callback) {
+    if (args.length &#x3e; 1) {
+        this.send(501, &#x27;Error: syntax: AUTH PLAIN token&#x27;);
+        return callback();
+    }
+
+    if (!args.length) {
+        this._nextHandler = SASL.PLAIN_token.bind(this, true);
+        this.send(334);
+        return callback();
+    }
+
+    SASL.PLAIN_token.call(this, false, args[0], callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.SASL_XOAUTH2" id="apidoc.element.smtp-server.sasl.SASL_XOAUTH2">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>SASL_XOAUTH2
+        <span class="apidocSignatureSpan">(args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SASL_XOAUTH2(args, callback) {
+    if (args.length &#x3e; 1) {
+        this.send(501, &#x27;Error: syntax: AUTH XOAUTH2 token&#x27;);
+        return callback();
+    }
+
+    if (!args.length) {
+        this._nextHandler = SASL.XOAUTH2_token.bind(this, true);
+        this.send(334);
+        return callback();
+    }
+
+    SASL.XOAUTH2_token.call(this, false, args[0], callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.XOAUTH2_error" id="apidoc.element.smtp-server.sasl.XOAUTH2_error">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>XOAUTH2_error
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">XOAUTH2_error(data, callback) {
+    this.send(535, &#x27;Error: Username and Password not accepted&#x27;);
+    return callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.sasl.XOAUTH2_token" id="apidoc.element.smtp-server.sasl.XOAUTH2_token">
+        function <span class="apidocSignatureSpan">smtp-server.sasl.</span>XOAUTH2_token
+        <span class="apidocSignatureSpan">(canAbort, token, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">XOAUTH2_token(canAbort, token, callback) {
+    token = (token || &#x27;&#x27;).toString().trim();
+
+    if (canAbort &#x26;&#x26; token === &#x27;*&#x27;) {
+        this.send(501, &#x27;Authentication aborted&#x27;);
+        return callback();
+    }
+
+    let username;
+    let accessToken;
+
+    // Find username and access token from the input
+    new Buffer(token, &#x27;base64&#x27;).toString().split(&#x27;\x01&#x27;).forEach(part =&#x3e; {
+        part = part.split(&#x27;=&#x27;);
+        let key = part.shift().toLowerCase();
+        let value = part.join(&#x27;=&#x27;).trim();
+
+        if (key === &#x27;user&#x27;) {
+            username = value;
+        } else if (key === &#x27;auth&#x27;) {
+            value = value.split(/\s+/);
+            if (value.shift().toLowerCase() === &#x27;bearer&#x27;) {
+                accessToken = value.join(&#x27; &#x27;);
+            }
+        }
+    });
+
+    if (!username || !accessToken) {
+        this.send(500, &#x27;Error: invalid userdata&#x27;);
+        return callback();
+    }
+
+    this._server.onAuth({
+        method: &#x27;XOAUTH2&#x27;,
+        username,
+        accessToken
+    }, this.session, (err, response) =&#x3e; {
+
+        if (err) {
+            this._server.logger.info({
+                err,
+                tnx: &#x27;autherror&#x27;,
+                cid: this._id,
+                method: &#x27;XOAUTH2&#x27;,
+                user: username
+            }, &#x27;Authentication error for %s using %s. %s&#x27;, username, &#x27;XOAUTH2&#x27;, err.message);
+            this.send(err.responseCode || 535, err.message);
+            return callback();
+        }
+
+        if (!response.user) {
+            this._server.logger.info({
+                tnx: &#x27;authfail&#x27;,
+                cid: this._id,
+                method: &#x27;XOAUTH2&#x27;,
+                user: username
+            }, &#x27;Authentication failed for %s using %s&#x27;, username, &#x27;XOAUTH2&#x27;);
+            this._nextHandler = SASL.XOAUTH2_error.bind(this);
+            this.send(response.responseCode || 334, new Buffer(JSON.stringify(response.data || {})).toString(&#x27;base64&#x27;));
+            return callback();
+        }
+
+        this._server.logger.info({
+            tnx: &#x27;auth&#x27;,
+            cid: this._id,
+            method: &#x27;XOAUTH2&#x27;,
+            user: username
+        }, &#x27;%s authenticated using %s&#x27;, username, &#x27;XOAUTH2&#x27;);
+        this.session.user = response.user;
+        this.session.transmissionType = this._transmissionType();
+
+        this.send(235, &#x27;Authentication successful&#x27;);
+        callback();
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.smtp-server.smtp_connection" id="apidoc.module.smtp-server.smtp_connection">module smtp-server.smtp_connection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.smtp_connection.SMTPConnection" id="apidoc.element.smtp-server.smtp_connection.SMTPConnection">
+        function <span class="apidocSignatureSpan">smtp-server.smtp_connection.</span>SMTPConnection
+        <span class="apidocSignatureSpan">(server, socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class SMTPConnection extends EventEmitter {
+    constructor(server, socket) {
+        super();
+        // Random session ID, used for logging
+        this._id = crypto.randomBytes(9).toString(&#x27;base64&#x27;);
+
+        this._server = server;
+        this._socket = socket;
+
+        // session data (envelope, user etc.)
+        this.session = this.session = {
+            id: this._id
+        };
+
+        // how many messages have been processed
+        this._transactionCounter = 0;
+
+        // Do not allow input from client until initial greeting has been sent
+        this._ready = false;
+
+        // If true then the connection is currently being upgraded to TLS
+        this._upgrading = false;
+
+        // Set handler for incoming command and handler bypass detection by command name
+        this._nextHandler = false;
+
+        // Parser instance for the incoming stream
+        this._parser = new SMTPStream();
+
+        // Set handler for incoming commands
+        this._parser.oncommand = (...args) =&#x3e; this._onCommand(...args);
+
+        // if currently in data mode, this stream gets the content of incoming message
+        this._dataStream = false;
+
+        // If true, then the connection is using TLS
+        this.session.secure = this.secure = !!this._server.options.secure;
+
+        this.tlsOptions = this.secure ? this._socket.getCipher() : false;
+
+        // Store remote address for later usage
+        this.remoteAddress = (this._socket.remoteAddress || &#x27;&#x27;).replace(/^::ffff:/, &#x27;&#x27;);
+        this.remotePort = Number(this._socket.remotePort) || 0;
+
+        // normalize IPv6 addresses
+        if (this.remoteAddress &#x26;&#x26; net.isIPv6(this.remoteAddress)) {
+            this.remoteAddress = ipv6normalize(this.remoteAddress);
+        }
+
+        // Error counter - if too many commands in non-authenticated state are used, then disconnect
+        this._unauthenticatedCommands = 0;
+
+        // Error counter - if too many invalid commands are used, then disconnect
+        this._unrecognizedCommands = 0;
+
+        // Server hostname for the greegins
+        this.name = this._server.options.name || os.hostname();
+
+        // Resolved hostname for remote IP address
+        this.clientHostname = false;
+
+        // The opening SMTP command (HELO, EHLO or LHLO)
+        this.openingCommand = false;
+
+        // The hostname client identifies itself with
+        this.hostNameAppearsAs = false;
+
+        // data passed from XCLIENT command
+        this._xClient = new Map();
+
+        // data passed from XFORWARD command
+        this._xForward = new Map();
+
+        // if true then can emit connection info
+        this._canEmitConnection = true;
+
+        // increment connection count
+        this._closing = false;
+        this._closed = false;
+    }
+
+<span class="apidocCodeCommentSpan">    /**
+     * Initiates the connection. Checks connection limits and reverse resolves client hostname. The client
+     * is not allowed to send anything before init has finished otherwise &#x27;You talk too soon&#x27; error is returned
+     */
+</span>    init() {
+        // Setup event handlers for the socket
+        this._setListeners();
+
+        // Check that connection limit is not exceeded
+        if (this._server.options.maxClients &#x26;&#x26; this._server.connections.size &#x3e; this._server.options.maxClients) {
+            return this.send(421, this.name + &#x27; Too many connected clients, try again in a moment&#x27;);
+        }
+
+        if (!this._server.options.useProxy) {
+            // Keep a small delay for detecting early talkers
+            setTimeout(() =&#x3e; this.connectionReady(), 100);
+        }
+    }
+
+    connectionReady(next) {
+
+        // Resolve hostname for the remote IP
+        let reverseCb = (err, hostnames) =&#x3e; {
+            if (err) {
+                // ignore resolve error
+            }
+
+            if (this._closing || this._closed) {
+                return;
+            }
+
+            this.clientHostname = hostnames &#x26;&#x26; hostnames.shift() || &#x27;[&#x27; + this.remoteAddress + &#x27;]&#x27;;
+
+            this._resetSession();
+
+            this._server.onConnect(this.session, err =&#x3e; {
+                this._server.logger.info({
+                    tnx: ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.smtp-server.smtp_stream" id="apidoc.module.smtp-server.smtp_stream">module smtp-server.smtp_stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.smtp-server.smtp_stream.SMTPStream" id="apidoc.element.smtp-server.smtp_stream.SMTPStream">
+        function <span class="apidocSignatureSpan">smtp-server.smtp_stream.</span>SMTPStream
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class SMTPStream extends Writable {
+    constructor(options) {
+        // init Writable
+        super(options);
+
+        // Indicates if the stream is currently in data mode
+        this._dataMode = false;
+        // Output stream for the current data mode
+        this._dataStream = null;
+        // How many bytes are allowed for a data stream
+        this._maxBytes = Infinity;
+        // How many bytes have been emitted to data stream
+        this.dataBytes = 0;
+        // Callback to run once data mode is finished
+        this._continueCallback = false;
+        // unprocessed chars from the last parsing iteration (used in command mode)
+        this._remainder = &#x27;&#x27;;
+        // unprocessed bytes from the last parsing iteration (used in data mode)
+        this._lastBytes = false;
+
+        this.closed = false;
+        // once the input stream ends, flush all output without expecting the newline
+        this.on(&#x27;finish&#x27;, () =&#x3e; this._flushData());
+    }
+
+<span class="apidocCodeCommentSpan">    /**
+     * Placeholder command handler. Override this with your own.
+     */
+</span>    oncommand( /* command, callback */ ) {
+        throw new Error(&#x27;Command handler is not set&#x27;);
+    }
+
+    /**
+     * Switch to data mode and return output stream. The dots in the stream are unescaped.
+     *
+     * @returns {Stream} Data stream
+     */
+    startDataMode(maxBytes) {
+        this._dataMode = true;
+        this._maxBytes = maxBytes &#x26;&#x26; Number(maxBytes) || Infinity;
+        this.dataBytes = 0;
+        this._dataStream = new PassThrough();
+
+        return this._dataStream;
+    }
+
+    /**
+     * Call this once data mode is over and you have finished processing the data stream
+     */
+    continue () {
+        if (typeof this._continueCallback === &#x27;function&#x27;) {
+            this._continueCallback();
+            this._continueCallback = false;
+        } else {
+            // indicate that the &#x27;continue&#x27; was already called once the stream actually ends
+            this._continueCallback = true;
+        }
+    }
+
+    // PRIVATE METHODS
+
+    /**
+     * Writable._write method.
+     */
+    _write(chunk, encoding, next) {
+        if (!chunk || !chunk.length) {
+            return next();
+        }
+
+        let data;
+        let pos = 0;
+        let newlineRegex;
+
+        let called = false;
+        let done = (...args) =&#x3e; {
+            if (called) {
+                return;
+            }
+            called = true;
+            next(...args);
+        };
+
+        if (this.closed) {
+            return done();
+        }
+
+        if (!this._dataMode) {
+
+            newlineRegex = /\r?\n/g;
+            data = this._remainder + chunk.toString(&#x27;binary&#x27;);
+
+            let readLine = () =&#x3e; {
+                let match;
+                let line;
+                let buf;
+
+                // check if the mode is not changed
+                if (this._dataMode) {
+                    buf = new Buffer(data.substr(pos), &#x27;binary&#x27;);
+                    this._remainder = &#x27;&#x27;;
+                    return this._write(buf, &#x27;buffer&#x27;, done);
+                }
+
+                // search for the next newline
+                // exec keeps count of the last match with lastIndex
+                // so it knows from where to start with the next iteration
+                if ((match = newlineRegex.exec(data))) {
+                    line = data.substr(pos, match.index - pos);
+                    pos += line.length + match[0].length;
+                } else {
+                    this._remainder = pos &#x3c; data.length ? data.substr(pos) : &#x27;&#x27;;
+                    return done();
+                }
+
+                this.oncommand(new Buffer(line, &#x27;binary&#x27;), readLine);
+            };
+
+            // start reading lines
+            readLine();
+
+        } else {
+            this._feedDataStream(chunk, done);
+        }
+    }
+
+    /**
+     * Processes a chunk in data mode. Escape dots are removed and final dot ends the data mode.
+     */
+    _feedDataStream(chunk, done) {
+        let i;
+        let endseq = new Buffer(&#x27;\r\n.\r\n&#x27;);
+        let len;
+        let handled;
+        let buf;
+
+        if (this._lastBytes &#x26;&#x26; this._lastBytes.length) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
